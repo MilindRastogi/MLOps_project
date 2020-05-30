@@ -221,43 +221,42 @@ model.compile(optimizer=RMSprop(), loss='categorical_crossentropy',
 h = model.fit(X_train, y_train_cat, epochs=1)
 
 
-# In[ ]:
+# In[77]:
 
 
-plt.imshow(X_test[0])
+a = h.history['accuracy'][0]
 
 
-# In[ ]:
+# In[78]:
 
 
-y_test[0]
+a = a.astype(str)
 
 
-# In[ ]:
+# In[79]:
 
 
-model.predict(X_test[0])
+file1 = open("accuracy.txt", "w")  
 
 
-# In[ ]:
+# In[80]:
 
 
-test_img = X_test[0].reshape(28*28)
+file1.write(a)
 
 
-# In[ ]:
+# In[81]:
 
 
-test_img.shape
-
-
-# In[ ]:
-
-
-model.predict(test_img)
+file1 = open('accuracy.txt', 'r') 
+print(file1.read()) 
+file1.close() 
 
 
 # In[ ]:
+
+
+
 
 
 
