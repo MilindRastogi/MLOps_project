@@ -252,6 +252,7 @@ file1 = open('accuracy.txt', 'r')
 print(file1.read()) 
 file1.close() 
 
+print(a)
 
 # In[ ]:
 
