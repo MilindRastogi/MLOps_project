@@ -20,32 +20,10 @@ from keras.layers import Dense
 
 model = Sequential()
 
-#model.add(Convolution2D(filters=32, 
-#                        kernel_size=(3,3), 
-#                        activation='relu',
-#                   input_shape=(28,28,1)
-#                      ))
-
-
-#model.add(MaxPooling2D(pool_size=(2, 2)))
-
-#model.add(Convolution2D(filters=32, 
-#                        kernel_size=(3,3), 
-#                        activation='relu',
-#                       ))
-
-
-#model.add(MaxPooling2D(pool_size=(2, 2)))
 
 model.add(Flatten())
-unit = 512
-model.add(Dense(units=unit,  activation='relu'))
 
-#model.add(Dense(units=256, activation='relu'))
-
-#model.add(Dense(units=128, activation='relu'))
-
-#model.add(Dense(units=32, activation='relu'))
+model.add(Dense(units=512,  activation='relu'))
 
 model.add(Dense(units=10, activation='softmax'))
 
@@ -55,11 +33,11 @@ model.compile(optimizer='adam', loss='categorical_crossentropy',
              metrics=['accuracy']
              )
 
-epoch = 5
-h = model.fit(X_train, y_train_cat, epochs=epoch)
+e = 5
+h = model.fit(X_train, y_train_cat, epochs=e)
 
 
-a = h.history['accuracy'][4]
+a = h.history['accuracy'][-1]
 a = a.astype(str)
 file1 = open("accuracy.txt", "w")  
 file1.write(a)
