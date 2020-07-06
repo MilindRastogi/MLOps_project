@@ -1,5 +1,5 @@
 import smtplib
-f = open("accuracy.txt' , r)
+f = open("accuracy.txt" , 'r')
 acc = f.read()
 
 s = smtplib.SMTP(host= 'smtp.gmail.com', port= 587)
