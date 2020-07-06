@@ -38,8 +38,8 @@ model = Sequential()
 #model.add(MaxPooling2D(pool_size=(2, 2)))
 
 model.add(Flatten())
-
-model.add(Dense(units=512,  activation='relu'))
+unit = 512
+model.add(Dense(units=unit,  activation='relu'))
 
 #model.add(Dense(units=256, activation='relu'))
 
@@ -55,8 +55,8 @@ model.compile(optimizer='adam', loss='categorical_crossentropy',
              metrics=['accuracy']
              )
 
-
-h = model.fit(X_train, y_train_cat, epochs=5)
+epoch = 5
+h = model.fit(X_train, y_train_cat, epochs=epoch)
 
 
 a = h.history['accuracy'][4]
